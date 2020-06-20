@@ -1,0 +1,8 @@
+micronaut:
+  application:
+    name: micronaut
+  server:
+    port: 18080
+jackson:
+  serialization:
+    WRITE_DATES_AS_TIMESTAMPS: false
