@@ -9,8 +9,8 @@ thread_nums=(1 5 10)
 
 host=localhost
 
-warmup_duration=60s
-test_duration=60s
+warmup_duration=3s
+test_duration=3s
 
 function test() {
   app=$1

@@ -1,6 +1,5 @@
 package com.sfb.mfdemo;
 
-import io.quarkus.launcher.shaded.org.apache.http.HttpStatus;
 import io.quarkus.vertx.web.Route;
 import io.vertx.core.http.HttpMethod;
 import io.vertx.core.json.Json;
@@ -26,7 +25,7 @@ public class VertxWebResource {
     void getArticles(RoutingContext rc) {
         ofNullable(articlesService.getArticles(rc.pathParam("path"))).map(Json::encode).ifPresentOrElse(
                 body -> rc.response().putHeader(CONTENT_TYPE, APPLICATION_JSON).end(body),
-                () -> rc.response().setStatusCode(HttpStatus.SC_NOT_FOUND).end()
+                () -> rc.response().setStatusCode(404).end()
         );
     }
 
